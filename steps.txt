@@ -1,0 +1,25 @@
+Partie 1 :
+    Etape 1 - Scanner avec nmap : 
+        Scanner l'adresse ip local avec nmap. 
+    Etape 2 - dirb :
+        Ensuite scanner avec dirb pour trouver tout les chemins accessible du site
+    Etape 3 - forum :
+        Apres avoir trouver tout les chemis accesible il y a un chemin plusieurs chemin disponible /forum, /phpmyadmin, /webmail pour l'interessant
+        seul /forum semble interessant car les deux autres demande des information de connexion.
+        Sur ce forum on trouve differents post seul celui de "lmezard" retiens notre attention car il contient toute ses tentative de connection ssh.
+        Dans une ligne il semble confondre son login et son mdp donc le mdp est visible et nous pouvons le tester pour essayer de ce connecter a son compte.
+    Etape 4 - connection au compte
+        En utilisant le nom d'utilisateur(lmezard) et le mots de passe(!q\]Ej?*5K5cy*AJ) trouver dans ces log partager on arrive a ce connecter au compte.
+    Etape 5 - tester le mots de passe ailleurs
+        En teste le mots de passe pour essayer de ce connecter en ssh,phpmyadmin,webmail mais cela ne fonctionne pas.
+Partie 2:
+    Etape 1 - Connection au webmail
+        Apres avoir essayer de ce connecter sur webmail avec le login "lmezard" on parcours les information de compte de lmezard et on utilise son mail(laurie@borntosec.net)
+        et le mdp(!q\]Ej?*5K5cy*AJ) qu'on a recuperer precedement et on arrive a ce connecter.
+    Etape 2 - Consultation des mails
+        On a deux mail dans la boite de reception dans l'un d'entre elle ce trouve un message indiquant les identifiant pour ce connecter a la base de donner
+    Etape 3 - Connection a la base de donner
+        On ce connecte a la base de donner avec le login(root) et le mdp(Fg-'kKXBj87E:aJ$) recupere dans la boite mail.
+Partie 3:
+    Etape 1 - Exploiter la db
+        On accee a toute la base de donner. On va essayer d'exploiter cela en on injec
