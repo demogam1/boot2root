@@ -2,11 +2,18 @@
 
     #### Étape 1 - Scanner avec nmap :
 
-        Scannez l'adresse IP locale avec nmap.
+        Scannez une range d'adresse IP locale avec nmap.
+        nmap -Sn 192.168.56.0/24
 
     #### Étape 2 - dirb :
 
         Scannez ensuite avec dirb pour trouver tous les chemins accessibles du site.
+        
+        dirb http://192.168.56.103 /usr/share/dirb/wordlists/common.txt
+
+        /forum    	(Status: 301) [Size: 318] [--> https://192.168.56.103/forum/]
+		/phpmyadmin	(Status: 301) [Size: 323] [--> https://192.168.56.103/phpmyadmin/]
+		/webmail	(Status: 301) [Size: 320] [--> https://192.168.56.103/webmail/]
 
     #### Étape 3 - Forum :
 
